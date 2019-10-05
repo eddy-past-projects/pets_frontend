@@ -13,7 +13,6 @@ const PetContainer = () => {
 
   // console.log(this.props)
   return (<div className='PetContainer'>
-    i am the pets container
     <MyPets />
 
   </div>)
