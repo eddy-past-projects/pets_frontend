@@ -7,7 +7,8 @@ import PetContainer from './containers/PetContainer'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Signup from './components/Signup'
-//
+import Home from './components/Home'
+
 import MyPets from './components/MyPets'
 import NavBar from './components/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
@@ -21,6 +22,7 @@ class App extends React.Component {
   render() {
     return (<div className='App'>
       <NavBar/>
+      <Route path='/' component={Home}/>
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/mypets' component={MyPets}/>
