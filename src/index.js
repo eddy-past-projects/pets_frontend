@@ -11,13 +11,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import currentUserReducer from './reducers/currentUserReducer';
 import logInFormReducer from './reducers/logInFormReducer';
 import signupFormReducer from './reducers/signupFormReducer';
-// import userPetsReducer from './reducers/userPetsReducer';
+import myPetsReducer from './reducers/myPetsReducer';
 
 
 const reducer = combineReducers({
   currentUser: currentUserReducer,
   loginForm: logInFormReducer,
-  // userPets: userPetsReducer,
+  myPets: myPetsReducer,
   signupForm: signupFormReducer
 })
 

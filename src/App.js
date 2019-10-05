@@ -3,12 +3,12 @@ import './App.css';
 import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 // import { Container } from 'semantic-ui-react'
-// import PetsContainer from './containers/PetsContainer'
+import PetContainer from './containers/PetContainer'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Signup from './components/Signup'
 //
-// import UserPets from './components/UserPets'
+import MyPets from './components/MyPets'
 import NavBar from './components/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
 
@@ -23,6 +23,8 @@ class App extends React.Component {
       <NavBar/>
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
+      <Route path='/mypets' component={MyPets}/>
+
 
 
     </div>)

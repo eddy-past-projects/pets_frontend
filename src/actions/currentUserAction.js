@@ -1,5 +1,7 @@
 import { resetLogInForm } from './logInFormAction'
 import { resetSignupForm } from './signupFormAction'
+import { getMyPets } from './myPetsAction'
+import { clearMyPets } from './myPetsAction'
 
 
 
@@ -35,6 +37,8 @@ export const login = (credentials) => {
         } else {
           dispatch(setCurrentUser(resp))
           dispatch(resetLogInForm())
+          dispatch(getMyPets())
+
 
         }
       })
@@ -46,6 +50,8 @@ export const login = (credentials) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
+    dispatch(clearMyPets())
+
     return fetch('http://localhost:3000/logout', {
       credentials: "include",
       method: "DELETE"
@@ -68,6 +74,8 @@ export const getCurrentUser = () => {
           alert(resp.error)
         } else {
           dispatch(setCurrentUser(resp))
+          dispatch(getMyPets())
+
         }
       })
       .catch(console.log)
