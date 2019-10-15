@@ -1,13 +1,17 @@
 import React from 'react'
+// import { Card, Image, Icon, Button } from 'semantic-ui-react'
+
 
 const PetCard = ( {pet} ) => {
   return (
-    <div className='pet-card' data-action='this-pet' data-id={pet.id} >
-      <div className='pet-image' img={pet.image} />
 
-      <h3>name: {pet.name}</h3>
-      <p>type of pet: {pet.kind}</p>
-    </div>
+      <div className='pet-card' data-action='this-pet' data-id={pet.id} >
+        <img scr={pet.image}  alt='' className='pet-image' />
+        <h3>name: {pet.name}</h3>
+        <h5>type of pet: {pet.kind}< br/>
+        needs to be fed: {String(pet.hungry)}</h5>
+      </div>
+
   )
 }
 export default PetCard

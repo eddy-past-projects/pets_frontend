@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import PetCard from './PetCard'
 
 const MyPets = props => {
-  const petCards = props.pets.length > 0 ? props.pets.map(pet => <PetCard pet={pet} key={pet.id}/>) : []
+  console.log(props.pets)
+  const petCards = props.pets.length > 0 ? props.pets.map(pet => <PetCard img scr={pet.image} pet={pet} key={pet.id}/>) : []
+
   return (
     petCards
   )

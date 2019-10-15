@@ -20,9 +20,11 @@ class App extends React.Component {
 
   render() {
     return (<div className='App'>
+
       <NavBar/>
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
+        <Route path='/logout' component={Logout}/>
       <Route path='/mypets' component={MyPets}/>
       <PetContainer/>
 
