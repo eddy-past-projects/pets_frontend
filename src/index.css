@@ -25,21 +25,25 @@ body {
   padding: 100px
 }
 
-h3 {
+ h3{
+  font-family: 'Amatic SC';
   font-size: 30pt;
   line-height: 10%;
   display: block;
   margin: 0
 }
 h4 {
+  font-family: 'Amatic SC';
   font-size: 40pt
 }
 h5 {
+  font-family: 'Amatic SC';
   font-size: 20pt;
   margin: 0
 
 }
 h6 {
+  font-family: 'Amatic SC';
   font-size: 30pt;
 
 }
