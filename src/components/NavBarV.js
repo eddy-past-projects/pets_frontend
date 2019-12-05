@@ -6,41 +6,10 @@ import { Link } from 'react-router-dom'
 
 
 
-class NavBar extends React.Component {
-
-  constructor(props) {
-   super()
-
-  this.state = {
-     width: window.innerWidth
-   }
- }
-
- componentDidMount() {
-   window.addEventListener('resize', this.handleWindowSizeChange);
- }
-
- componentWillUnmount() {
-   window.removeEventListener('resize', this.handleWindowSizeChange);
- }
-
- handleWindowSizeChange = () => {
-   this.setState({ width: window.innerWidth });
- }
-
- render (){
-   let wordsNavbar
-    const width = this.state.width
-    // width <= 500 ? isMobile = true : isMobile = false
-    width <= 700
-      ? wordsNavbar = "navbar-mobile"
-      : wordsNavbar = "navbar-desktop"
-
-
+const NavBar = ({ currentUser }) => {
 
   return (<div>
     <nav id="navbar">
-      <div className={wordsNavbar}>
   <Link to="/"  className='navbar-brand'><span>Adopt a Pet!</span></Link>
   <ul>
     <li><Link to="/" className='nav-home'>Home</Link></li>
@@ -51,7 +20,6 @@ class NavBar extends React.Component {
   <button className="navbar-toggler">
     <span></span>
   </button>
-</div>
 </nav>
 
 
@@ -60,7 +28,6 @@ class NavBar extends React.Component {
 
 
   </div>);
-}
 }
 
 const mapStateToProps = ({ currentUser }) => {

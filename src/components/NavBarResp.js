@@ -29,18 +29,25 @@ class NavBar extends React.Component {
  }
 
  render (){
-   let wordsNavbar
+   let isMobile
     const width = this.state.width
-    // width <= 500 ? isMobile = true : isMobile = false
-    width <= 700
-      ? wordsNavbar = "navbar-mobile"
-      : wordsNavbar = "navbar-desktop"
+    width <= 500 ? isMobile = true : isMobile = false
+
+
+    let buttonSize
+    let navbarStyle
+    if (isMobile) {
+      buttonSize = "small"
+      navbarStyle = "NavBar mobile"
+    } else {
+      buttonSize = "large"
+      navbarStyle = "NavBar desktop"
+    }
 
 
 
   return (<div>
     <nav id="navbar">
-      <div className={wordsNavbar}>
   <Link to="/"  className='navbar-brand'><span>Adopt a Pet!</span></Link>
   <ul>
     <li><Link to="/" className='nav-home'>Home</Link></li>
@@ -51,7 +58,6 @@ class NavBar extends React.Component {
   <button className="navbar-toggler">
     <span></span>
   </button>
-</div>
 </nav>
 
 

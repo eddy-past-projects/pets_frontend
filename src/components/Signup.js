@@ -1,14 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { updateSignupForm } from "../actions/signupFormAction"
-import { signup } from "../actions/currentUserAction"
+import {connect} from 'react-redux'
+import {updateSignupForm} from "../actions/signupFormAction"
+import {signup} from "../actions/currentUserAction"
 
-
-const Signup = ({ signupFormData, updateSignupForm, signup }) => {
-  
+const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
 
   const handleOnChange = event => {
-    const { name, value } = event.target
+    const {name, value} = event.target
     const updatedFormInfo = {
       ...signupFormData,
       [name]: value
@@ -16,26 +14,35 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
     updateSignupForm(updatedFormInfo)
   }
 
-
-
   const handleSubmit = event => {
     event.preventDefault()
-    signup(signupFormData)
+    signup(signupFormData, history)
+    history.push('/')
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleOnChange} />
-      <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleOnChange} />
-      <input type="submit" value="Sign Up"/>
-    </form>
-  )
+    <div className='ui form'>
+      <div className="fields">
+        <div className="seven wide field">
+          <h3><input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleOnChange}/></h3>
+        </div>
+        <div className="seven wide field">
+          <h3><input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleOnChange}/></h3>
+        </div>
+        <div className="two wide field">
+          <h3>
+            <button type="submit" className="ui button">Submit</button>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </form>
+)
 }
 
 const mapStateToProps = state => {
-  return {
-    signupFormData: state.signupForm
-  }
+  return {signupFormData: state.signupForm}
 }
 
-export default connect(mapStateToProps, { updateSignupForm, signup} )(Signup)
+export default connect(mapStateToProps, {updateSignupForm, signup})(Signup)

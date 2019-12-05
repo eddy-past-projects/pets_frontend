@@ -6,7 +6,7 @@ import { login } from '../actions/currentUserAction'
 
 
 
-const Login = ({ loginFormData, updateLogInForm, login}) => {
+const Login = ({ loginFormData, updateLogInForm, login, history}) => {
 
   const handleInputChange = event => {
     const { name, value } = event.target
@@ -19,17 +19,32 @@ const Login = ({ loginFormData, updateLogInForm, login}) => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    login(loginFormData)
+    login(loginFormData, history)
+    history.push('/')
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input placeholder="name" value={loginFormData.name} name="name" type="text" onChange={handleInputChange} />
-      <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange} />
-      <input type="submit" value="Log In"/>
-    </form>
-  )
+return (
+  <form onSubmit={handleSubmit}>
+  <div className="ui form">
+    <div className="fields">
+      <div className="seven wide field">
+        <h3><input placeholder="name" value={loginFormData.name} name="name" type="text" onChange={handleInputChange}/></h3>
+      </div>
+      <div className="seven wide field">
+        <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange}/>
+      </div>
+      <div className="two wide field">
+        <h3><button type="submit" className="ui button">Submit</button></h3>
+      </div>
+    </div>
+  </div>
+</form>
+)
 }
+
+
+
+
 
 
 const mapStateToProps = state => {

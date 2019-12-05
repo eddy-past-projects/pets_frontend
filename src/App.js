@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
-import { Container } from 'semantic-ui-react'
+// import { Container } from 'semantic-ui-react'
 import PetContainer from './containers/PetContainer'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Signup from './components/Signup'
+import { logout } from './actions/currentUserAction'
+
 //
 import MyPets from './components/MyPets'
 import NavBar from './components/NavBar'
