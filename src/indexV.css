@@ -142,21 +142,7 @@ padding: 0;
 
 
 
-@media (max-width: 991px) {
-  #navbar ul {
-    padding: 0 10px;
-  }
-  #navbar ul li a {
-    min-width: 100px;
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 767px) {
-  #navbar {
-    padding: 0;
-  }
-  #navbar ul {
+  #navbar  ul {
     width: 100%;
     padding: 0;
     background-color: rgba(0,0,0,0.9);
@@ -165,16 +151,16 @@ padding: 0;
     overflow: hidden;
     transition: all ease-in-out 0.3s;
   }
-  #navbar ul.open {
+  #navbar .navbar-mobile  ul.open {
     max-height: 100vh;
   }
-#navbar ul li {
+#navbar .navbar-mobile  ul li {
     width: 100%;
   }
-  #navbar ul li a {
+  #navbar .navbar-mobile ul li a {
     padding: 0;
   }
-  #navbar .navbar-toggler {
+  #navbar  .navbar-toggler {
     display: block;
     position: absolute;
     height: 40px;
@@ -189,9 +175,9 @@ padding: 0;
     padding: 0 5px;
     cursor: pointer;
   }
-  #navbar .navbar-toggler span,
-  #navbar .navbar-toggler span::before,
-  #navbar .navbar-toggler span::after {
+  #navbar  .navbar-toggler span,
+  #navbar  .navbar-toggler span::before,
+  #navbar  .navbar-toggler span::after {
     display: block;
     content: '';
     background-color: #fff;
@@ -200,29 +186,27 @@ padding: 0;
     border-radius: 4px;
     transition: all ease-in-out 0.3s;
   }
-  #navbar .navbar-toggler span::before {
+  #navbar  .navbar-toggler span::before {
     transform: translateY(-8px);
   }
-  #navbar .navbar-toggler span::after {
+  #navbar  .navbar-toggler span::after {
     transform: translateY(5px);
   }
 
-  #navbar .navbar-toggler.open-navbar-toggler span {
-    /* transform: rotate(90deg); */
+  #navbar  .navbar-toggler.open-navbar-toggler span {
+    transform: rotate(90deg);
     background-color: transparent;
-    /* transform: scale(0.85) rotate(270deg); */
+    transform: scale(0.85) rotate(270deg);
   }
   #navbar .navbar-toggler.open-navbar-toggler span::before {
     transform: translateY(0px) rotate(45deg);
-    /* transform: translateY(0px) scale(0.75) rotate(45deg); */
+    transform: translateY(0px) scale(0.75) rotate(45deg);
   }
-  #navbar .navbar-toggler.open-navbar-toggler span::after {
+  #navbar  .navbar-toggler.open-navbar-toggler span::after {
     transform: translateY(-3px) rotate(-45deg);
-    /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
+    transform: translateY(-3px) scale(0.75) rotate(-45deg);
   }
-}
-
-
+/* } */
 
 
  .container {

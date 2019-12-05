@@ -1,61 +1,3 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-} */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Amatic SC';
-  text-align: center;
-  font-size: 30pt;
-  background-color: #fff;
-  color: #333;
-  padding-top: 100px;
-}
-
- h3, input{
-  font-family: 'Amatic SC';
-  font-size: 30pt;
-  line-height: 10%;
-  display: block;
-  margin: 0
-}
- .seven.wide.field input{
- font-family: 'Amatic SC';
- font-size: 20pt;
- line-height: 10%;
- display: block;
- margin: 0
-}
-h4 {
-  font-family: 'Amatic SC';
-  font-size: 40pt
-}
-h5 {
-  font-family: 'Amatic SC';
-  font-size: 20pt;
-  margin: 0
-
-}
-h6 {
-  font-family: 'Amatic SC';
-  font-size: 30pt;
-
-}
-
-
 #navbar {
   margin: 0;
   background-color: #000;
@@ -88,12 +30,6 @@ h6 {
   font-size: 55px;
 
 }
-/* #navbar .navbar-mobile a.navbar-brand span {
-  font-size: 35px;
-} */
-
-
-
 #navbar ul {
   float: right;
   list-style: none;
@@ -116,11 +52,7 @@ h6 {
 #navbar .navbar-toggler {
   display: none;
 }
-/* #navbar .navbar-mobile ul {
-width: 100%;
-padding: 0;
 
-} */
 
 /* .container {
   position: relative;
@@ -139,8 +71,31 @@ padding: 0;
 
 
 
-
-
+#log-in { background-color: yellow; }
+#sign-up { background-color: #002561; }
+#log-out { background-color: #333; }
+/* .intro {
+  width: 100%;
+  height: 100vh;
+  background: url("https://source.unsplash.com/GYQBryEWh0Y/") no-repeat center center;
+  background-size: cover;
+  background-color: #000;
+}
+.container {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+}
+.container h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20vh;
+}
+#html { background-color: #e34f26; }
+#css { background-color: #002561; }
+#javascript { background-color: #333; } */
 
 @media (max-width: 991px) {
   #navbar ul {
@@ -221,8 +176,6 @@ padding: 0;
     /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
   }
 }
-
-
 
 
  .container {
