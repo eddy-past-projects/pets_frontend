@@ -19,7 +19,7 @@ export const clearMyPets = () => {
 export const getMyPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
-    return fetch('http://localhost:3000/pets', {
+    return fetch('https://pets-backend-api.herokuapp.com/pets', {
         credentials: 'include',
       })
       .then(resp => resp.json())
