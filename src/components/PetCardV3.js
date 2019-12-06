@@ -20,17 +20,6 @@ toggleCard = ()=>{
     return {front:!prevState.front}
   })
 }
-// hungryToggle =({ item, mode })=> {
-//   const isHungryMode = mode === 'hungry';
-//   return (
-//     <div>
-//       { isHungryMode
-//         ? <itemHungry item={item} />
-//         : <ItemView item={item} />
-//       }
-//     </div>
-//   );
-// }
 
 render() {
   // console.log('trip', this.props)
@@ -43,21 +32,19 @@ render() {
       (<>
         <Card.Content >
           <Card.Description>
-          <h3>hi! i'm {pet.name}</h3>
-            <h5>i'm {pet.age} years old.</h5>
+            <h3> {pet.name}</h3>
+            <h5>type of pet: {pet.kind}< br/>
+            needs to be fed: {String(pet.hungry)}</h5>
           <hr></hr>
 
 
           </Card.Description>
-          <Button size='mini' onClick={this.toggleCard}>flip to tend to me!</Button>
+          <Button size='mini' onClick={this.toggleCard}>flip to tend to your pet!</Button>
           </Card.Content>
 
 
         </>) :
         <Card.Content >
-            <h5>needs to be fed: {String(pet.hungry)}</h5>
-              <Button size='mini' onClick={this.toggleCard}>flip back!</Button>
-
         </Card.Content >
       }
 
