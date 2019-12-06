@@ -2,13 +2,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import { Link } from 'react-router-dom'
 import PetCard from './PetCard'
+import PetHungry from './PetHungry'
+
 
 const MyPets = props => {
   console.log(props.pets)
+  const petHungry = props.pets.length > 0 ? props.pets.map(pet => <PetHungry  pet={pet} key={pet.id}/>) : []
   const petCards = props.pets.length > 0 ? props.pets.map(pet => <PetCard img scr={pet.image} pet={pet} key={pet.id}/>) : []
 
   return (
     petCards
+
   )
 }
 

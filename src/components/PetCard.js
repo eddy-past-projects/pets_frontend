@@ -12,7 +12,8 @@ import { Card, Image, Icon, Button } from 'semantic-ui-react'
 class PetCard extends React.Component {
 
   state ={
-  front:true
+  front:true,
+  hungry:true
 }
 
 toggleCard = ()=>{
@@ -20,20 +21,16 @@ toggleCard = ()=>{
     return {front:!prevState.front}
   })
 }
-// hungryToggle =({ item, mode })=> {
-//   const isHungryMode = mode === 'hungry';
-//   return (
-//     <div>
-//       { isHungryMode
-//         ? <itemHungry item={item} />
-//         : <ItemView item={item} />
-//       }
-//     </div>
-//   );
-// }
+
+
+hungryToggle =()=> {
+  this.setState((prevState) =>{
+    return {hungry:!prevState.hungry}
+  })
+}
 
 render() {
-  // console.log('trip', this.props)
+  console.log('pet', this.props)
   const { pet } = this.props
 
   return(
@@ -55,7 +52,7 @@ render() {
 
         </>) :
         <Card.Content >
-            <h5>needs to be fed: {String(pet.hungry)}</h5>
+          { (this.state.hungry) ? <Button className='hungry' onClick={this.hungryToggle}>i'm stuffed, time for a nap!</Button> : <Button className='hungry'  onClick={this.hungryToggle}>i'm hungry, please feed me!</Button> }<br/><hr></hr>
               <Button size='mini' onClick={this.toggleCard}>flip back!</Button>
 
         </Card.Content >

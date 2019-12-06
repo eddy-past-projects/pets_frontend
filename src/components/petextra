@@ -1,0 +1,32 @@
+
+  hi! my name is: <%= @pet.name %><br>
+  i'm a: <%= @pet.kind %><br>
+  i'm <%= @pet.age %> years old<br>
+  my fur color is: <%= @pet.color %>
+  and my hair is: <%= @pet.hair %><br><br>
+
+
+  <%= link_to 'pet needs changin?', edit_pet_path%><br><br>
+
+
+  <% if @pet.hungry %>
+  i'm hungry! please <%= button_to 'feed', pet_hungry_path(@pet), method: :patch%> me.
+  <% else %>
+  i'm stuffed. <%= button_to 'i`m hungry again', pet_hungry_path(@pet), method: :patch%>
+  <% end %>
+  <% if !@pet.hungry %>
+    <%= link_to 'time for a nap', peep_path(@pet.peep) %>
+  <% end %>
+  <%# <%  pet_hungry = !pet_hungry %><br><br> %>
+  <!-- peep_path(@pet.peep) -->
+  <!-- peeps_path -->
+  <%= link_to 'pet went to heaven', pet_path, method: :delete, data: { confirm: 'are u sure?' }%><br><br>
+
+
+
+  <Card.Content >
+    { (this.state.hungry) ?
+      <h5><div className='hungry' onClick={this.hungryToggle}></div></h5>}
+        <Button size='mini' onClick={this.toggleCard}>flip back!</Button>
+
+  </Card.Content >
