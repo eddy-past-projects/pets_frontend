@@ -22,7 +22,7 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
+    return fetch("https://pets-backend-api.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
       headers: {
@@ -52,7 +52,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     dispatch(clearMyPets())
 
-    return fetch('http://localhost:3000/logout', {
+    return fetch('https://pets-backend-api.herokuapp.com/logout', {
       credentials: "include",
       method: "DELETE"
     })
@@ -61,7 +61,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/get_current_user", {
+    return fetch("https://pets-backend-api.herokuapp.com/get_current_user", {
       credentials: "include",
       method: "GET",
       headers: {
@@ -88,7 +88,7 @@ export const signup = (credentials) => {
     user: credentials
   }
   return dispatch => {
-    return fetch("http://localhost:3000/signup", {
+    return fetch("https://pets-backend-api.herokuapp.com/signup", {
       credentials: "include",
       method: "POST",
       headers: {
