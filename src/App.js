@@ -9,6 +9,8 @@ import Logout from './components/Logout'
 import Signup from './components/Signup'
 import {logout} from './actions/currentUserAction'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
+import Backdrop from "./components/mobileNavbar/Backdrop"
+
 
 //
 import MyPets from './components/MyPets'
@@ -39,9 +41,11 @@ class App extends React.Component {
   render() {
     console.log(this.props, this.state)
     let mobileNavbar;
+    let backdrop;
 
     if (this.state.mobileNavbarOpen) {
-      mobileNavbar = <MobileNavbar click={this.toggleBackClickHandler}/>
+      mobileNavbar = <MobileNavbar />
+      backdrop = <Backdrop click={this.toggleBackClickHandler} />
     }
 
     return (<div className='App'>
@@ -49,7 +53,9 @@ class App extends React.Component {
           height: '100%'
         }}/>
 
-      <NavBar buttonClickHandler={this.toggleButtonClickHandler}/> {mobileNavbar}
+      <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
+      {mobileNavbar}
+      {backdrop}
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
