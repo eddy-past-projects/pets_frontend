@@ -32,7 +32,9 @@ class NavBar extends React.Component {
     </ul>
 
     </div>
+    <div className='mobile-navbar-button'>
     <ToggleButton click={this.props.buttonClickHandler}/>
+    </div>
 
     </nav>
 

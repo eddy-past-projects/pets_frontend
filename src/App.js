@@ -11,7 +11,6 @@ import {logout} from './actions/currentUserAction'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
 
-
 //
 import MyPets from './components/MyPets'
 import NavBar from './components/navbar/NavBar'
@@ -40,12 +39,10 @@ class App extends React.Component {
 
   render() {
     console.log(this.props, this.state)
-    let mobileNavbar;
     let backdrop;
 
     if (this.state.mobileNavbarOpen) {
-      mobileNavbar = <MobileNavbar />
-      backdrop = <Backdrop click={this.toggleBackClickHandler} />
+      backdrop = <Backdrop click={this.toggleBackClickHandler}/>
     }
 
     return (<div className='App'>
@@ -54,7 +51,7 @@ class App extends React.Component {
         }}/>
 
       <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
-      {mobileNavbar}
+      <MobileNavbar show={this.state.mobileNavbarOpen}/>
       {backdrop}
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
