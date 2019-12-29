@@ -1,32 +1,15 @@
-/* .toggle {
-  display: block;
-  position: absolute;
-  height: 40px;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  width: 28px;
-  outline: none;
-  padding: 0 5px;
-  cursor: pointer;
-} */
 .toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* position: absolute; */
-  height: 40px;
-  top: 20px;
-  right: 20px;
   background-color: transparent;
   color: #fff;
   border: none;
   width: 28px;
-  height: 24px;
+  height: 30px;
   outline: none;
-  padding: 0;
+  padding: 5px;
+  margin-top: 20px;
   cursor: pointer;
   box-sizing: border-box;
 }
