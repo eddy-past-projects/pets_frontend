@@ -1,0 +1,29 @@
+.mobile-navbar {
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+
+.mobile-navbar ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.mobile-navbar li {
+  padding: 10px;
+}
+
+.mobile-navbar a:hover {
+  color: grey;
+}
