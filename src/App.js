@@ -11,7 +11,7 @@ import { logout } from './actions/currentUserAction'
 
 //
 import MyPets from './components/MyPets'
-import NavBar from './components/NavBar'
+import NavBar from './components/navbar/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
 
 class App extends React.Component {

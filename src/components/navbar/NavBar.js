@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Login from './Login'
-import Logout from './Logout'
+import Login from '../../components/Login'
+import Logout from '../../components/Logout'
 import { Link } from 'react-router-dom'
+import './NavBar.css'
+import ToggleButton from '../mobileNavbar/ToggleButton'
 
 
 
@@ -41,7 +43,9 @@ class NavBar extends React.Component {
   return (<div>
     <nav id="navbar">
       <div className={wordsNavbar}>
+        <ToggleButton/>
   <Link to="/"  className='navbar-brand'><span>Adopt a Pet!</span></Link>
+  <div className='words'>
   <ul>
     <li><Link to="/" className='nav-home'>Home</Link></li>
     <li><Link to="/login" className='nav-log-in' >Log In</Link></li>
@@ -51,6 +55,7 @@ class NavBar extends React.Component {
   <button className="navbar-toggler">
     <span></span>
   </button>
+</div>
 </div>
 </nav>
 

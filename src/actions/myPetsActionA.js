@@ -1,14 +1,14 @@
 // import { resetPetForm } from './petForm'
 
 // synchronous actions
-export const setAllPets = pets => {
+export const setMyPets = pets => {
   return {
     type: "SET_MY_PETS",
     pets
   }
 }
 
-export const clearAllPets = () => {
+export const clearMyPets = () => {
   return {
     type: "CLEAR_MY_PETS",
 
@@ -16,10 +16,10 @@ export const clearAllPets = () => {
 }
 
 //
-export const getAllPets = () => {
+export const getMyPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
-    return fetch('http://localhost:3000/pets', {
+    return fetch('https://pets-backend-api.herokuapp.com/pets', {
         credentials: 'include',
       })
       .then(resp => resp.json())
@@ -27,17 +27,16 @@ export const getAllPets = () => {
   if (resp.error) {
     alert(resp.error)
   } else {
-    dispatch(setAllPets(resp))
+    dispatch(setMyPets(resp))
   }
 })
 .catch(console.log)
 }
 }
-
 export const addPet = () => {
 
   return dispatch => {
-    return fetch("http://localhost:3000/pets", {
+    return fetch("https://pets-backend-api.herokuapp.com/pets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

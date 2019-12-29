@@ -1,0 +1,47 @@
+/* .toggle {
+  display: block;
+  position: absolute;
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  width: 28px;
+  outline: none;
+  padding: 0 5px;
+  cursor: pointer;
+} */
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* position: absolute; */
+  height: 40px;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  width: 28px;
+  height: 24px;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+
+
+.toggle:focus {
+  outline: none;
+}
+
+.toggle-button_line {
+content: '';
+background-color: #fff;
+height: 2px;
+width: 28px;
+border-radius: 4px;
+transition: all ease-in-out 0.3s;
+}

@@ -23,7 +23,7 @@ const MyPets = props => {
 
 const mapStateToProps = state => {
   return {
-    pets: state.myPets,
+    pets: state.myPets
   }
 }
 
