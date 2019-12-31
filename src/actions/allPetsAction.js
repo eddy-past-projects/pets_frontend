@@ -19,11 +19,12 @@ export const clearAllPets = () => {
 export const getAllPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
-    return fetch('http://localhost:3000/pets', {
-        credentials: 'include',
+    return fetch('https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/pets', {
+        // credentials: 'include',
       })
       .then(resp => resp.json())
 .then(resp => {
+  console.log('allPets', resp)
   if (resp.error) {
     alert(resp.error)
   } else {
@@ -37,11 +38,13 @@ export const getAllPets = () => {
 export const addPet = () => {
 
   return dispatch => {
-    return fetch("http://localhost:3000/pets", {
+    return fetch('https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/pets', {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
-      },
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'      },
+      
       body: JSON.stringify()
     })
       .then(resp => resp.json())

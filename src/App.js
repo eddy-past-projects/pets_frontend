@@ -51,8 +51,7 @@ class App extends React.Component {
         }}/>
 
       <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
-      <MobileNavbar show={this.state.mobileNavbarOpen}/>
-      {backdrop}
+      <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
