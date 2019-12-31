@@ -26,8 +26,7 @@ export const login = (credentials) => {
       credentials: "include",
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(credentials)
     })
@@ -66,8 +65,7 @@ export const getCurrentUser = () => {
       credentials: "include",
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json"
       },
     })
       .then(resp => resp.json())
@@ -94,8 +92,7 @@ export const signup = (credentials) => {
       credentials: "include",
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(userInfo)
     })

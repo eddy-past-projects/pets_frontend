@@ -19,41 +19,15 @@ export const clearMyPets = () => {
 export const getMyPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
-    return fetch('http://localhost:3000/pets', {
-        credentials: 'include',
-      })
-      .then(resp => resp.json())
-.then(resp => {
-  if (resp.error) {
-    alert(resp.error)
-  } else {
-    dispatch(setMyPets(resp))
-  }
-})
-.catch(console.log)
+    dispatch({type: 'LOADING_PETS'})
+    return fetch('http://localhost:3000/pets')
+    // return fetch('http://localhost:3000/pets')
+
+    .then(resp => resp.json())
+  // .then(console.log)
+  .then(pets => {
+    console.log('pets' )
+    dispatch({ type: 'FETCH_PETS', payload: pets })});
 }
 }
-export const addPet = () => {
-
-  return dispatch => {
-    return fetch("http://localhost:3000/pets", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify()
-    })
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log('addPet', resp)
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          console.log()
-
-
-        }
-      })
-      .catch(console.log)
-  }
-}
+// // //

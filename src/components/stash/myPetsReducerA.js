@@ -6,9 +6,6 @@ export default (state = initialState, action) => {
       return action.pets
       case "CLEAR_MY_PETS":
         return initialState
-        case "ADD_PET":
-      console.log('add pet reducer')
-      return {...state, pets: [...state.pets, action.pet], loading: false}
     default:
       return state
   }

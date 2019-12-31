@@ -19,9 +19,11 @@ export const clearMyPets = () => {
 export const getMyPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
-    return fetch('https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/pets')
+    return fetch('http://localhost:3000/pets')
 
       .then(resp => resp.json())
+  //     .then(res => res.text())          // convert to plain text
+  // .then(text => console.log(text))
 .then(resp => {
   if (resp.error) {
     alert(resp.error)
@@ -32,3 +34,4 @@ export const getMyPets = () => {
 .catch(console.log)
 }
 }
+// //

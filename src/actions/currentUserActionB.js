@@ -22,13 +22,14 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
-      credentials: "include",
+    return fetch("https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/login", {
+      // credentials: "include",
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
+        'Access-Control-Allow-Origin': 'https://pets-backend-api.herokuapp.com/login',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
       body: JSON.stringify(credentials)
     })
       .then(resp => resp.json())
@@ -38,7 +39,7 @@ export const login = (credentials) => {
         } else {
           dispatch(setCurrentUser(resp))
           dispatch(resetLogInForm())
-          dispatch(getMyPets())
+          // dispatch(getMyPets())
 
 
         }
@@ -51,10 +52,10 @@ export const login = (credentials) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    dispatch(clearMyPets())
+    // dispatch(clearMyPets())
 
-    return fetch('http://localhost:3000/logout', {
-      credentials: "include",
+    return fetch('https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/logout', {
+      // credentials: "include",
       method: "DELETE"
     })
   }
@@ -62,12 +63,13 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/get_current_user", {
-      credentials: "include",
+    return fetch("https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/get_current_user", {
+      // credentials: "include",
       method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
       },
     })
       .then(resp => resp.json())
@@ -76,7 +78,7 @@ export const getCurrentUser = () => {
           alert(resp.error)
         } else {
           dispatch(setCurrentUser(resp))
-          dispatch(getMyPets())
+          // dispatch(getMyPets())
 
         }
       })
@@ -90,12 +92,13 @@ export const signup = (credentials) => {
     user: credentials
   }
   return dispatch => {
-    return fetch("http://localhost:3000/signup", {
-      credentials: "include",
+    return fetch("https://safe-waters-79087.herokuapp.com/https://pets-backend-api.herokuapp.com/signup", {
+      // credentials: "include",
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Access-Control-Allow-Origin': 'https://pets-backend-api.herokuapp.com/signup',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
       },
       body: JSON.stringify(userInfo)
     })
