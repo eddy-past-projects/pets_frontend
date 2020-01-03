@@ -1,23 +1,32 @@
+
+
 import React from 'react'
+import Pets from '../components/pets/Pets'
+import { getPets } from '../actions/petsAction'
+import { connect } from 'react-redux'
 
-import MyPets from '../components/MyPets'
 
 
-
-const PetContainer = () => {
+class PetContainer extends React.Component {
   //
 
-  // componentDidMount(){
-  //    console.log('componentDidMount')
-  //   this.props.fetchTrips()
-  // }
-
+  componentDidMount(){
+    this.props.getPets()
+  }
   // console.log(this.props)
-  return (<div className='PetContainer'>
-    <MyPets />
+  render () {
+    console.log(this.props, this.props.pets.pets)
+  return (<div >
+
+    <Pets pets={this.props.pets.pets}/>
 
 
   </div>)
 }
+}
+const mapStateToProps = state => {
+  return {pets: state.pets}
+}
 
-export default PetContainer
+
+export default connect(mapStateToProps, { getPets })(PetContainer)

@@ -8,16 +8,16 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import currentUserReducer from './reducers/currentUserReducer';
-import logInFormReducer from './reducers/logInFormReducer';
-import signupFormReducer from './reducers/signupFormReducer';
-import myPetsReducer from './reducers/myPetsReducer';
+import currentUserReducer from './reducers/users/currentUserReducer';
+import logInFormReducer from './reducers/users/logInFormReducer';
+import signupFormReducer from './reducers/users/signupFormReducer';
+import petsReducer from './reducers/petsReducer';
 
 
 const reducer = combineReducers({
   currentUser: currentUserReducer,
   loginForm: logInFormReducer,
-  myPets: myPetsReducer,
+  pets: petsReducer,
   signupForm: signupFormReducer
 })
 

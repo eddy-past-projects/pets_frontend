@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { addPet } from '../actions/myPetsAction'
+import { addPet } from '../actions/petsAction'
 
 class Petform extends React.Component { //
 
