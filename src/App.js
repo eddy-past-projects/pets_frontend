@@ -12,7 +12,7 @@ import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
 
 //
-import MyPets from './components/MyPets'
+import Pets from './components/pets/Pets'
 import NavBar from './components/navbar/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
 
@@ -55,7 +55,7 @@ class App extends React.Component {
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
-      <Route path='/mypets' component={MyPets}/>
+      <Route path='/mypets' component={Pets}/>
       <PetContainer/>
 
     </div>)
