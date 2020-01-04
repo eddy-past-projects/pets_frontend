@@ -1,7 +1,7 @@
 import { resetLogInForm } from './logInFormAction'
 import { resetSignupForm } from './signupFormAction'
-import { getMyPets } from './myPetsAction'
-import { clearMyPets } from './myPetsAction'
+// import { getPets } from '../petAction'
+// import { clearMyPets } from '../petAction'
 
 
 
@@ -22,22 +22,27 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
-      credentials: "include",
+    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/login", {
+      // credentials: "include",
+      // credentials: 'same-origin',
+      // credentials: 'omit',
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(credentials)
-    })
+        headers: {
+          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/login',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      })
       .then(resp => resp.json())
       .then(resp => {
+        console.log('login', resp)
         if (resp.error) {
           alert(resp.error)
         } else {
           dispatch(setCurrentUser(resp))
           dispatch(resetLogInForm())
-          dispatch(getMyPets())
+          // dispatch(getMyPets())
 
 
         }
@@ -50,10 +55,10 @@ export const login = (credentials) => {
 export const logout = event => {
   return dispatch => {
     dispatch(clearCurrentUser())
-    dispatch(clearMyPets())
+    // dispatch(clearMyPets())
 
-    return fetch('http://localhost:3000/logout', {
-      credentials: "include",
+    return fetch('https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
+      // credentials: "include",
       method: "DELETE"
     })
   }
@@ -61,12 +66,13 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/get_current_user", {
-      credentials: "include",
+    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/get_current_user", {
       method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      },
+        headers: {
+          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/login',
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
     })
       .then(resp => resp.json())
       .then(resp => {
@@ -74,8 +80,7 @@ export const getCurrentUser = () => {
           alert(resp.error)
         } else {
           dispatch(setCurrentUser(resp))
-          dispatch(getMyPets())
-
+          // dispatch(getMyPets())
         }
       })
       .catch(console.log)
@@ -87,18 +92,21 @@ export const signup = (credentials) => {
   const userInfo = {
     user: credentials
   }
+
   return dispatch => {
-    return fetch("http://localhost:3000/signup", {
+    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
       credentials: "include",
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/signup',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       body: JSON.stringify(userInfo)
     })
       .then(resp => resp.json())
       .then(resp => {
-        console.log('signup', resp)
+        console.log('signup resp', resp)
         if (resp.error) {
           alert(resp.error)
         } else {

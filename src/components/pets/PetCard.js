@@ -2,7 +2,7 @@ import React from 'react'
 // import { Card, Image, Icon, Button } from 'semantic-ui-react'
 // import { Link } from 'react-router-dom'
 // import { Image} from 'semantic-ui-react'
-import { Card, Image, Icon, Button } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 
 
 
@@ -30,7 +30,7 @@ hungryToggle =()=> {
 }
 
 render() {
-  console.log('pet', this.props)
+  // console.log('pet', this.props)
   const { pet } = this.props
 
   return(

@@ -2,12 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 // import { Link } from 'react-router-dom'
 import PetCard from './PetCard'
+import './Pets.css'
 
 
-const AllPets = props => {
-  console.log(props.pets)
-  const petCards = props.pets.length > 0 ? props.pets.map(pet => <PetCard img scr={pet.image} pet={pet} key={pet.id}/>) : []
-
+const Pets = props => {
+  const allpets = props.pets.pets
+  console.log('allpets',allpets)
+  const petCards = allpets.length > 0 ? allpets.map(pet => <PetCard img scr={pet.image} pet={pet} key={pet.id}/>) : []
+console.log(petCards)
   return (
     petCards
 
@@ -21,8 +23,8 @@ const AllPets = props => {
 
 const mapStateToProps = state => {
   return {
-    pets: state.AllPets,
+    pets: state.pets
   }
 }
 
-export default connect(mapStateToProps)(AllPets)
+export default connect(mapStateToProps)(Pets)
