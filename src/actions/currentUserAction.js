@@ -81,7 +81,6 @@ export const getCurrentUser = () => {
         } else {
           dispatch(setCurrentUser(resp))
           // dispatch(getMyPets())
-//
         }
       })
       .catch(console.log)
@@ -106,18 +105,17 @@ export const signup = (credentials) => {
       body: JSON.stringify(userInfo)
     })
       .then(resp => resp.json())
-      .then(console.log)
-      // .then(resp => {
-      //   console.log('signup resp', resp)
-      //   if (resp.error) {
-      //     alert(resp.error)
-      //   } else {
-      //     dispatch(setCurrentUser(resp))
-      //     dispatch(resetSignupForm())
-      //
-      //
-      //   }
-      // })
-      // .catch(console.log)
+      .then(resp => {
+        console.log('signup resp', resp)
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          dispatch(setCurrentUser(resp))
+          dispatch(resetSignupForm())
+
+
+        }
+      })
+      .catch(console.log)
   }
 }
