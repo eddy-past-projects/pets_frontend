@@ -13,6 +13,12 @@
  margin: 1rem 1rem;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: grey;
+
+}
 .pet-image {
  justify-self: center;
  height: 17.5rem;

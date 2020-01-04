@@ -1,7 +1,8 @@
 import { resetLogInForm } from './logInFormAction'
 import { resetSignupForm } from './signupFormAction'
-// import { getMyPets } from './myPetsAction'
-// import { clearMyPets } from './myPetsAction'
+
+// import { getPets } from '../petAction'
+// import { clearMyPets } from '../petAction'
 
 
 
@@ -81,7 +82,7 @@ export const getCurrentUser = () => {
         } else {
           dispatch(setCurrentUser(resp))
           // dispatch(getMyPets())
-//
+
         }
       })
       .catch(console.log)
@@ -93,11 +94,14 @@ export const signup = (credentials) => {
   const userInfo = {
     user: credentials
   }
+
   return dispatch => {
     return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
-      // credentials: "include",
+
+      credentials: "include",
       method: "POST",
       headers: {
+        'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/signup',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
@@ -105,7 +109,7 @@ export const signup = (credentials) => {
     })
       .then(resp => resp.json())
       .then(resp => {
-        console.log('signup', resp)
+        console.log('signup resp', resp)
         if (resp.error) {
           alert(resp.error)
         } else {

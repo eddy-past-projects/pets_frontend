@@ -28,7 +28,7 @@
   padding: 10px;
 }
 
-.mobile-navbar a:hover {
+.mobile-navbar li  a:hover {
   color: grey;
 }
 

@@ -4,12 +4,15 @@ import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 // import { Container } from 'semantic-ui-react'
 import PetContainer from './containers/PetContainer'
-import Login from './components/users/Login'
+
+import Login from './components//users/Login'
 import Logout from './components/users/Logout'
 import Signup from './components/users/Signup'
 import {logout} from './actions/currentUserAction'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
+import ToggleButton from "./components/mobileNavbar/ToggleButton"
+
 
 
 import Pets from './components/pets/Pets'
@@ -18,19 +21,22 @@ import {getCurrentUser} from './actions/currentUserAction'
 
 class App extends React.Component {
   state = {
-    mobileNavbarOpen: false
+    mobileNavbarOpen: false,
+    toggleButtonOpen: false
   };
 
   toggleButtonClickHandler = () => {
     this.setState((prevState) => {
       return {
-        mobileNavbarOpen: !prevState.mobileNavbarOpen
+        mobileNavbarOpen: !prevState.mobileNavbarOpen,
+        toggleButtonOpen: !prevState.toggleButtonOpen
+
       }
     })
   }
 
   toggleBackClickHandler = () => {
-    this.setState({mobileNavbarOpen: false})
+    this.setState({mobileNavbarOpen: false, toggleButtonOpen: false})
   }
 
   componentDidMount() {
@@ -55,9 +61,13 @@ class App extends React.Component {
 
       <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
+        <ToggleButton show={this.state.toggleButtonOpen}/>
+
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
+
+      <Route path='/mypets' component={Pets}/>
       <PetContainer/>
 
     </div>)

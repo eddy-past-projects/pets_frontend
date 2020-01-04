@@ -1,16 +1,18 @@
 // import { resetPetForm } from './petForm'
 
 // synchronous actions
-// export const setMyPets = pets => {
+
+// export const setPets = pets => {
 //   return {
-//     type: "SET_MY_PETS",
+//     type: "SET_PETS",
 //     pets
 //   }
 // }
 //
-// export const clearMyPets = () => {
+
+// export const clearPets = () => {
 //   return {
-//     type: "CLEAR_MY_PETS",
+//     type: "CLEAR_PETS",
 //
 //   }
 // }
@@ -30,4 +32,3 @@ export const getPets = () => {
     dispatch({ type: 'FETCH_PETS', payload: pets })});
 }
 }
-// // //

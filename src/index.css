@@ -1,92 +1,13 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
 body {
-  font-family: 'Amatic SC';
-  text-align: center;
-  font-size: 30pt;
-  background-color: #fff;
-  color: #333;
-  padding-top: 100px;
-  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
- h3, input{
-  font-family: 'Amatic SC';
-  font-size: 30pt;
-  line-height: 100%;
-  display: block;
-  margin: 0
-}
- .seven.wide.field input{
- font-family: 'Amatic SC';
- font-size: 20pt;
- line-height: 10%;
- display: block;
- margin: 0
-}
-h4 {
-  font-family: 'Amatic SC';
-  font-size: 40pt
-}
-h5 {
-  font-family: 'Amatic SC';
-  font-size: 20pt;
-  margin: 0
-
-}
-h6 {
-  font-family: 'Amatic SC';
-  font-size: 30pt;
-
-}
-
-.container {
- margin-top: 20px;
- padding: 1rem;
- width: stretch;
- height: auto;
- display: none;
-}
-
-#petContainer {
- margin: 2rem;
- text-align: center
-}
-.pet-card {
- text-align: center;
- letter-spacing: 1px;
- border: grey solid 1px;
- padding: 1rem;
- width: 20rem;
- height: 31rem;
- display: inline-grid;
- margin: 1rem 1rem;
-}
-
-.pet-image {
- justify-self: center;
- height: 17.5rem;
- width: 17.5rem;
-}
-
-.toys {
- width: 17.5rem;
- justify-self: center;
- background-color: rbga(255, 255, 255, 50);
- margin: 0
-}
-.hungry {
- font-family: 'Amatic SC';
- text-align: center;
- font-size: 20pt;
- border: 0px;
-outline: none;
-
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
