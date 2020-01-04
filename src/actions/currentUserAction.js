@@ -96,7 +96,7 @@ export const signup = (credentials) => {
 
   return dispatch => {
     return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
-      // credentials: "include",
+      credentials: "include",
       method: "POST",
       headers: {
         'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/signup',
@@ -106,17 +106,18 @@ export const signup = (credentials) => {
       body: JSON.stringify(userInfo)
     })
       .then(resp => resp.json())
-      .then(resp => {
-        console.log('signup', resp)
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          dispatch(setCurrentUser(resp))
-          dispatch(resetSignupForm())
-
-
-        }
-      })
-      .catch(console.log)
+      .then(console.log)
+      // .then(resp => {
+      //   console.log('signup resp', resp)
+      //   if (resp.error) {
+      //     alert(resp.error)
+      //   } else {
+      //     dispatch(setCurrentUser(resp))
+      //     dispatch(resetSignupForm())
+      //
+      //
+      //   }
+      // })
+      // .catch(console.log)
   }
 }

@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 // import { Container } from 'semantic-ui-react'
 import PetContainer from './containers/PetContainer'
-import Login from './components/Login'
-import Logout from './components/Logout'
-import Signup from './components/Signup'
+import Login from './components//users/Login'
+import Logout from './components/users/Logout'
+import Signup from './components/users/Signup'
 import {logout} from './actions/currentUserAction'
 import MobileNavbar from "./components/mobileNavbar/MobileNavbar"
 import Backdrop from "./components/mobileNavbar/Backdrop"
