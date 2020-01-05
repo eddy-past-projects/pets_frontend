@@ -2,15 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { logout } from '../../actions/currentUserAction'
 
-const Logout = ({ logout }) => {
+const Logout = ({ logout , history}) => {
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    history.push('/')
+  }
 
   return (
-    <form onSubmit={logout}>
+  <form onSubmit={logout, handleSubmit}>
 <div className='log out'>
-  <div className="two wide field">
-    <h3><button type="submit" className="ui button">log out</button></h3>
+
+    <h3><button type="submit" className="button">log out</button></h3>
   </div>
-</div>
     </form>
   )
 }

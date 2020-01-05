@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {updateSignupForm} from "../../actions/signupFormAction"
 import {signup} from "../../actions/currentUserAction"
+import './Users.css'
 
 const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
 
@@ -20,25 +21,14 @@ const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
     history.push('/')
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-    <div className='ui form'>
-      <div className="fields">
-        <div className="seven wide field">
-          <h3><input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleOnChange}/></h3>
-        </div>
-        <div className="seven wide field">
-          <h3><input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleOnChange}/></h3>
-        </div>
-        <div className="two wide field">
-          <h3>
-            <button type="submit" className="ui button">Submit</button>
-          </h3>
-        </div>
-      </div>
+  return (<form onSubmit={handleSubmit} className='form'>
+    < div className='spacer'>
+        <h3><input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleOnChange}autoComplete="off"/>
+          <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleOnChange}autoComplete="off"/>
+          <button type="submit" className="button">Submit</button>
+        </h3>
     </div>
-  </form>
-)
+  </form>)
 }
 
 const mapStateToProps = state => {
