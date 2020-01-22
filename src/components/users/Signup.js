@@ -1,7 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {updateSignupForm} from "../../actions/signupFormAction"
-import {signup} from "../../actions/currentUserAction"
+import {updateSignupForm, signup} from "../../actions/signupFormAction"
+// import {signup} from "../../actions/currentUserAction"
+// import {signup} from "../../actions/signupFormAction"
+
 import './Users.css'
 
 const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
