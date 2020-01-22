@@ -23,13 +23,13 @@ export const clearCurrentUser = () => {
 // asynchronous action creators
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/login", {
+    return fetch("https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/login", {
       credentials: "include",
       // credentials: 'same-origin',
       // credentials: 'omit',
       method: "POST",
         headers: {
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/login',
+          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/login',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -58,7 +58,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/logout', {
       // credentials: "include",
       method: "DELETE"
     })
@@ -67,10 +67,10 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/get_current_user", {
+    return fetch("https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/get_current_user", {
       method: "GET",
         headers: {
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/login',
+          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/login',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -96,12 +96,12 @@ export const signup = (credentials) => {
   }
 
   return dispatch => {
-    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
+    return fetch("https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/signup", {
 
       credentials: "include",
       method: "POST",
       headers: {
-        'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com/signup',
+        'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/signup',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
