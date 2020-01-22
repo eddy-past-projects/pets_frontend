@@ -22,7 +22,7 @@ export const getPets = () => {
   console.log('dispatch user pets')
   return dispatch => {
     dispatch({type: 'LOADING_PETS'})
-    return fetch('https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/pets.json')
+    return fetch('https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/pets.json')
     // return fetch('http://localhost:3000/pets')
 
     .then(resp => resp.json())
