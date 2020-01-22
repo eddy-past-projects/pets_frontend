@@ -29,7 +29,7 @@ export const login = (credentials) => {
       // credentials: 'omit',
       method: "POST",
         headers: {
-          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/login',
+          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -70,7 +70,7 @@ export const getCurrentUser = () => {
     return fetch("https://cors-anywhere.herokuapp.com/https://upbeat-wing-9cf687.netlify.com/get_current_user", {
       method: "GET",
         headers: {
-          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/login',
+          'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -101,7 +101,7 @@ export const signup = (credentials) => {
       credentials: "include",
       method: "POST",
       headers: {
-        'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com/signup',
+        'Access-Control-Allow-Origin': 'https://upbeat-wing-9cf687.netlify.com',
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
