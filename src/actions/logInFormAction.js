@@ -17,11 +17,11 @@ export const resetLogInForm = () => {
 }
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("http://fast-waters-11750.herokuapp.com/login", {
+    return fetch("https://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
         headers: {
-          'Access-Control-Allow-Origin': 'http://fast-waters-11750.herokuapp.com',
+          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
