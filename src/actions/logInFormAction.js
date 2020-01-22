@@ -17,7 +17,7 @@ export const resetLogInForm = () => {
 }
 export const login = (credentials) => {
   return dispatch => {
-    return fetch("https://cors-anywhere.herokuapp.com/http://fast-waters-11750.herokuapp.com/login", {
+    return fetch("http://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
         headers: {

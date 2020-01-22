@@ -21,36 +21,7 @@ export const clearCurrentUser = () => {
 }
 
 // asynchronous action creators
-export const login = (credentials) => {
-  return dispatch => {
-    return fetch("https://cors-anywhere.herokuapp.com/https://fast-waters-11750.herokuapp.com/login", {
-      credentials: "include",
-      // credentials: 'same-origin',
-      // credentials: 'omit',
-      method: "POST",
-        headers: {
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      })
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log('login', resp)
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          dispatch(setCurrentUser(resp))
-          dispatch(resetLogInForm())
-          // dispatch(getMyPets())
 
-
-        }
-      })
-      .catch(console.log)
-  }
-}
 
 
 export const logout = event => {
@@ -58,7 +29,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://cors-anywhere.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('https://fast-waters-11750.herokuapp.com/logout', {
       credentials: "include",
       method: "DELETE"
     })
@@ -70,7 +41,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("https://cors-anywhere.herokuapp.com/https://fast-waters-11750.herokuapp.com/get_current_user", {
+    return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
       credentials: "include",
       method: "GET",
         headers: {
