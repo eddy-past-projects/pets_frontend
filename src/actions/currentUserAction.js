@@ -1,4 +1,4 @@
-import { resetLogInForm } from './logInFormAction'
+// import { resetLogInForm } from './logInFormAction'
 // import { resetSignupForm } from './signupFormAction'
 
 // import { getPets } from '../petAction'
@@ -55,7 +55,7 @@ export const getCurrentUser = () => {
         if (resp.error) {
           alert(resp.error)
         } else {
-          dispatch(setCurrentUser(resp.data))
+          dispatch(setCurrentUser(resp))
           // dispatch(getMyPets())
 
         }

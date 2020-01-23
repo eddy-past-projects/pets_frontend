@@ -48,6 +48,8 @@ class App extends React.Component {
 
   render() {
     console.log(this.props, this.state)
+    const currentUser = this.props.currentUser
+
     let backdrop;
 
     if (this.state.mobileNavbarOpen) {
@@ -66,8 +68,9 @@ class App extends React.Component {
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
-
       <Route path='/mypets' component={Pets}/>
+
+       { currentUser ? `hi, ${currentUser.name}`: `hi` }
       <PetContainer/>
 
     </div>)
@@ -75,7 +78,7 @@ class App extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  return {pets: state.pets}
+  return {currentUser: state.currentUser}
 }
 
 export default connect(mapStateToProps, {getCurrentUser})(App);
