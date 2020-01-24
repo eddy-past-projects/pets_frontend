@@ -1,4 +1,4 @@
-// import { resetLogInForm } from './logInFormAction'
+import { resetLogInForm } from './logInFormAction'
 // import { resetSignupForm } from './signupFormAction'
 
 // import { getPets } from '../petAction'
