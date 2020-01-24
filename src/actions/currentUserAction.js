@@ -44,6 +44,7 @@ export const getCurrentUser = () => {
     return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
       credentials: "include",
       method: "GET",
+      mode: 'no-cors',
         headers: {
           'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
           'Content-Type': 'application/json',
