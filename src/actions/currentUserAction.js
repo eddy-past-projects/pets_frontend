@@ -29,7 +29,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('https://safe-waters-79087.herokuapp.com/https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
       credentials: "include",
       method: "DELETE"
     })
