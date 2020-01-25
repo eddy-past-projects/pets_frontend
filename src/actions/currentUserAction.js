@@ -29,7 +29,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://safe-waters-79087.herokuapp.com/https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('https://fast-waters-11750.herokuapp.com/logout', {
       credentials: "include",
       method: "DELETE"
     })
@@ -41,12 +41,12 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/get_current_user", {
+    return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
       credentials: "include",
 
       method: "GET",
         headers: {
-          "Access-Control-Allow-Headers": "x-requested-with, x-requested-by",
+          "Access-Control-Allow-Headers": "x-requested-with",
           'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
