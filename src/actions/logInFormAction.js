@@ -21,6 +21,7 @@ export const login = (credentials) => {
       credentials: "include",
       method: "POST",
         headers: {
+           "Access-Control-Allow-Headers": "x-requested-with, x-requested-by",
           'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
