@@ -18,10 +18,12 @@ export const signup = (credentials, history) => {
       const userInfo = {
         user: credentials
       }
-      return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
+      return fetch("https://fast-waters-11750.herokuapp.com/signup", {
         credentials: "include",
         method: "POST",
         headers: {
+          // 'Access-Control-Allow-Headers':"x-requested-with, x-requested-by",
+
           'Access-Control-Allow-Origin':'https://unruffled-babbage-7875d2.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
