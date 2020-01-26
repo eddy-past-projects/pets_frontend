@@ -46,8 +46,7 @@ export const getCurrentUser = () => {
 
       method: "GET",
         headers: {
-          "Access-Control-Allow-Headers": "x-requested-with",
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
+          'Access-Control-Allow-Origin': 'https://unruffled-babbage-7875d2.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },

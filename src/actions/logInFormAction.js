@@ -16,13 +16,13 @@ export const resetLogInForm = () => {
   }
 }
 export const login = (credentials) => {
+  console.log(credentials)
   return dispatch => {
-    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/login", {
+    return fetch("https://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
         headers: {
-          "Access-Control-Allow-Headers": "x-requested-with",
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
+          'Access-Control-Allow-Origin':'https://unruffled-babbage-7875d2.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
