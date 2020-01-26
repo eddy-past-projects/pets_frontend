@@ -18,7 +18,7 @@ export const resetLogInForm = () => {
 export const login = (credentials) => {
   console.log(credentials)
   return dispatch => {
-    return fetch("https://fast-waters-11750.herokuapp.com/login", {
+    return fetch("https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
         headers: {
