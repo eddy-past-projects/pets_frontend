@@ -5,7 +5,7 @@ import {updateLogInForm, login} from '../../actions/logInFormAction'
 import './Users.css'
 
 const Login = ({loginFormData, updateLogInForm, login, history}) => {
-
+console.log('in login form')
   const handleInputChange = event => {
     const {name, value} = event.target
     const updatedFormInfo = {

@@ -18,7 +18,7 @@ export const resetLogInForm = () => {
 export const login = (credentials) => {
   console.log(credentials)
   return dispatch => {
-    return fetch("https://fast-waters-11750.herokuapp.com/login", {
+    return fetch("https://fast-waters-11750.herokuapp.com/login.json", {
       credentials: "include",
       method: "POST",
         headers: {
@@ -28,19 +28,20 @@ export const login = (credentials) => {
         },
         body: JSON.stringify(credentials)
       })
-      .then(resp => resp.json())
-      .then(resp => {
-        console.log('login', resp)
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          dispatch(setCurrentUser(resp))
-          dispatch(resetLogInForm())
-          // dispatch(getMyPets())
-
-
-        }
-      })
+      .then(resp => console.log(resp))
+      // .then(console.log)
+      // .then(resp => {
+      //   console.log('login', resp)
+      //   if (resp.error) {
+      //     alert(resp.error)
+      //   } else {
+      //     dispatch(setCurrentUser(resp))
+      //     dispatch(resetLogInForm())
+      //     // dispatch(getMyPets())
+      //
+      //
+      //   }
+      // })
       .catch(console.log)
   }
 }
