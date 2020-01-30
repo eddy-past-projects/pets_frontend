@@ -1,4 +1,4 @@
-import { resetLogInForm } from './logInFormAction'
+// import { resetLogInForm } from './logInFormAction'
 // import { resetSignupForm } from './signupFormAction'
 
 // import { getPets } from '../petAction'
@@ -29,11 +29,27 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('http://localhost:3000/logout', {
       credentials: "include",
-      method: "DELETE"
+      method: "DELETE",
+      headers: {
+
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+  })
+    .then(resp => resp.json())
+    .then(resp => {
+      if (resp.error) {
+        alert(resp.error)
+      } else {
+        dispatch(clearCurrentUser(resp))
+        // dispatch(getMyPets())
+
+      }
     })
-  }
+    .catch(console.log)
+}
 }
 
 
@@ -41,12 +57,12 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
+    return fetch("http://localhost:3000/get_current_user", {
       credentials: "include",
 
       method: "GET",
         headers: {
-          'Access-Control-Allow-Origin': 'https://unruffled-babbage-7875d2.netlify.com',
+
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },

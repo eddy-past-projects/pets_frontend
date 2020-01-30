@@ -18,6 +18,7 @@ import ToggleButton from "./components/mobileNavbar/ToggleButton"
 import Pets from './components/pets/Pets'
 import NavBar from './components/navbar/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
+import Home from './components/home/Home'
 
 class App extends React.Component {
   state = {
@@ -49,6 +50,7 @@ class App extends React.Component {
   render() {
     console.log(this.props, this.state)
     const currentUser = this.props.currentUser
+    console.log(currentUser.name)
 
     let backdrop;
 
@@ -68,14 +70,24 @@ class App extends React.Component {
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
-      <Route path='/mypets' component={Pets}/>
 
-       { currentUser ? `hi, ${currentUser.name}`: `hi` }
+      <Home currentUser={this.currentUser}/>
+
+
+
+
+
+
       <PetContainer/>
 
     </div>)
 
-  }
+
+     }
+
+
+
+
 }
 const mapStateToProps = state => {
   return {currentUser: state.currentUser}

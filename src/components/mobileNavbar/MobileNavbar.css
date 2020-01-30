@@ -24,11 +24,12 @@
   color: white;
 }
 
+
 .mobile-navbar li {
   padding: 10px;
 }
 
-.mobile-navbar li  a:hover {
+.mobile-navbar a:focus {
   color: grey;
 }
 

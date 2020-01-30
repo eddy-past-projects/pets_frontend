@@ -31,11 +31,3 @@ hr {
  background-color: rbga(255, 255, 255, 50);
  margin: 0
 }
-.hungry {
- font-family: 'Amatic SC';
- text-align: center;
- font-size: 20pt;
- border: 0px;
-outline: none;
-
-}

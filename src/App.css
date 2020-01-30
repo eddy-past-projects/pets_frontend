@@ -35,12 +35,14 @@ h4 {
 h5 {
   font-family: 'Amatic SC';
   font-size: 20pt;
-  margin: 0
+  margin: 0;
+  display: inline;
 
 }
 h6 {
   font-family: 'Amatic SC';
   font-size: 30pt;
+  display: inline;
 
 }
 
