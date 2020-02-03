@@ -13,7 +13,8 @@ class PetCard extends React.Component {
 
   state ={
   front:true,
-  hungry:true
+  hungry:true,
+  counter: 0
 }
 
 toggleCard = ()=>{
@@ -28,6 +29,13 @@ hungryToggle =()=> {
     return {hungry:!prevState.hungry}
   })
 }
+
+
+
+
+
+
+
 
 render() {
   // console.log('pet', this.props)

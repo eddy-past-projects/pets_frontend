@@ -15,7 +15,6 @@
 }
 
 
-
 .toggle:focus {
   outline: none;
 }
@@ -27,4 +26,10 @@ height: 2px;
 width: 28px;
 border-radius: 4px;
 transition: all ease-in-out 0.3s;
+}
+
+.buttonClose .toggle-button_line{
+  background-color: yellow;
+
+
 }
