@@ -8,7 +8,7 @@ const MobileNavbar = props => {
   let mobileClasses = ['mobile-navbar']
   if(props.show) {
     mobileClasses = ['mobile-navbar open']
-    console.log('hi')
+    console.log('props', props)
   }
 
 

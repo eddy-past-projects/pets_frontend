@@ -14,12 +14,6 @@ import NavBar from './components/navbar/NavBar'
 import {getCurrentUser} from './actions/currentUserAction'
 import Home from './components/home/Home'
 
-import MenuItem from './components/hamburger/MenuItem'
-import Menu from './components/hamburger/Menu'
-// import Footer from './components/hamburger/Footer'
-import MenuButton from './components/hamburger/MenuButton'
-
-
 
 class App extends React.Component {
   constructor(props){
@@ -37,14 +31,7 @@ class App extends React.Component {
     this.setState({menuOpen: false});
   }
 
-  componentDidMount() {
-    this.props.getCurrentUser()
-  }
-
-
   render(){
-    const currentUser = this.props.currentUser
-
     const styles=
       {
         container:{
@@ -92,23 +79,73 @@ class App extends React.Component {
           {menuItems}
         </Menu>
         <div style={styles.body}>
+          <Footer name='Menu'/>
         </div>
-        <Route path='/login' component={Login}/>
-        <Route path='/signup' component={Signup}/>
-        <Route path='/logout' component={Logout}/>
-
-        <Home currentUser={this.currentUser}/>
-        <PetContainer/>
       </div>
     )
   }
 }
 
 
+class App extends React.Component {
+  state = {
+    mobileNavbarOpen: false,
+    toggleButtonOpen: false,
+  };
+
+  toggleButtonClickHandler = () => {
+    this.setState((prevState) => {
+      return {
+        mobileNavbarOpen: !prevState.mobileNavbarOpen,
+        toggleButtonOpen: !prevState.toggleButtonOpen,
+
+      }
+    })
+  }
+
+  toggleBackClickHandler = () => {
+    this.setState({mobileNavbarOpen: false, toggleButtonOpen: false})
+  }
+
+  componentDidMount() {
+    this.props.getCurrentUser()
+  }
+
+  render() {
+    console.log(this.props, this.state)
+    const currentUser = this.props.currentUser
+    console.log(currentUser.name)
+
+    let backdrop;
+
+    if (this.state.mobileNavbarOpen) {
+      backdrop = <Backdrop click={this.toggleBackClickHandler}/>;
+    }
+
+    return (<div className='App'>
+      <div style={{
+          height: '100%'
+        }}/>
+
+      <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
+      <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
+        <ToggleButton show={this.state.toggleButtonOpen}/>
+
+      <Route path='/login' component={Login}/>
+      <Route path='/signup' component={Signup}/>
+      <Route path='/logout' component={Logout}/>
+
+      <Home currentUser={this.currentUser}/>
+      <PetContainer/>
+    </div>)
+
+
+     }
 
 
 
 
+}
 const mapStateToProps = state => {
   return {currentUser: state.currentUser}
 }
