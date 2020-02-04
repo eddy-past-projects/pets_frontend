@@ -18,11 +18,11 @@ export const signup = (credentials, history) => {
       const userInfo = {
         user: credentials
       }
-      return fetch("https://cors-anywhere.herokuapp.com/https://fast-waters-11750.herokuapp.com/signup", {
+      return fetch("https://fast-waters-11750.herokuapp.com/signup", {
         credentials: "include",
         method: "POST",
         headers: {
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
+          'Access-Control-Allow-Origin': 'https://elastic-fermat-cbf12b.netlify.com/',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },

@@ -6,6 +6,7 @@ const Logout = ({ logout , history}) => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    logout(history)
     history.push('/')
   }
 

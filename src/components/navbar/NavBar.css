@@ -29,6 +29,14 @@
   color: grey;
 }
 
+#navbar  a:focus {
+  color: grey;
+}
+
+#navbar a:active {
+  color: grey;
+}
+
 #navbar  a.navbar-logo  {
   font-size: 55px;
   text-transform: uppercase;
