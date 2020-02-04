@@ -18,9 +18,10 @@ export const resetLogInForm = () => {
 export const login = (credentials) => {
   console.log(credentials)
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
+    return fetch("https://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
+      // 'Access-Control-Allow-Origin': 'www.other.com',
         headers: {
 
           'Content-Type': 'application/json',

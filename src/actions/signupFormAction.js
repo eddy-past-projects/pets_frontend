@@ -18,13 +18,13 @@ export const signup = (credentials, history) => {
       const userInfo = {
         user: credentials
       }
-      return fetch("http://localhost:3000/signup", {
+      return fetch("https://fast-waters-11750.herokuapp.com/signup", {
         credentials: "include",
         method: "POST",
         headers: {
           // 'Access-Control-Allow-Headers':"x-requested-with, x-requested-by",
 
-        
+
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
