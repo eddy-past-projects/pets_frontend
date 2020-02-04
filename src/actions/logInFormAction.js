@@ -18,11 +18,11 @@ export const resetLogInForm = () => {
 export const login = (credentials) => {
   console.log(credentials)
   return dispatch => {
-    return fetch("http://localhost:3000/login", {
+    return fetch("ttps://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
         headers: {
-
+          'Access-Control-Allow-Origin': 'https://unruffled-babbage-7875d2.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
