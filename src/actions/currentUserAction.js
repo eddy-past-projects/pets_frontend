@@ -1,9 +1,3 @@
-import { resetLogInForm } from './logInFormAction'
-// import { resetSignupForm } from './signupFormAction'
-
-// import { getPets } from '../petAction'
-// import { clearMyPets } from '../petAction'
-
 
 
 // synchronous action creators

@@ -6,11 +6,12 @@ const Logout = ({ logout , history}) => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    logout(history)
     history.push('/')
   }
 
   return (
-  <form onSubmit={logout, handleSubmit}>
+  <form onSubmit={handleSubmit}>
 <div className='log out'>
 
     <h3><button type="submit" className="button">log out</button></h3>
