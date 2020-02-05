@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import Pets from '../components/pets/Pets'
 import { getPets } from '../actions/petsAction'

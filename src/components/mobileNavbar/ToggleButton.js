@@ -4,10 +4,7 @@ import './MobileNavbar'
 
 const ToggleButton = props => (
 
-  // let toggleClasses = ['toggle-button']
-  // if(props.show) {
-  //   toggleClasses = ['toggle-button close']
-  // }
+
 
   <button className='toggle' onClick={props.click}>
     <div className='toggle-button_line'/>
@@ -15,10 +12,6 @@ const ToggleButton = props => (
     <div className='toggle-button_line'/>
 </button>)
 
-// return (
-//   <div />
-//
-// )
 
 
 

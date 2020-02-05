@@ -25,7 +25,13 @@
   color: #fff;
 }
 
-#navbar .navbar-words a:hover {
+#navbar  a:hover {
+  color: grey;
+}
+#navbar  a:focus {
+  color: grey;
+}
+#navbar  a:active {
   color: grey;
 }
 

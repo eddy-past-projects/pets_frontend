@@ -28,6 +28,10 @@
   padding: 10px;
 }
 
+.mobile-navbar a:focus {
+  color: grey;
+}
+
 .mobile-navbar li  a:hover {
   color: grey;
 }

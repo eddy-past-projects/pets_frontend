@@ -45,7 +45,7 @@ export const getCurrentUser = () => {
       credentials: "include",
       method: "GET",
         headers: {
-          'Access-Control-Allow-Origin': 'https://fast-waters-11750.herokuapp.com',
+          'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com/',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
