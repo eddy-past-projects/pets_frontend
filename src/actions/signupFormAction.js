@@ -18,7 +18,7 @@ export const signup = (credentials, history) => {
       const userInfo = {
         user: credentials
       }
-      return fetch("ttps://fast-waters-11750.herokuapp.com/signup", {
+      return fetch("https://fast-waters-11750.herokuapp.com/signup", {
         credentials: "include",
         method: "POST",
         headers: {
