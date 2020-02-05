@@ -23,7 +23,6 @@ export const getPets = () => {
   return dispatch => {
     dispatch({type: 'LOADING_PETS'})
     return fetch('https://safe-waters-79087.herokuapp.com/https://fast-waters-11750.herokuapp.com/pets')
-    // return fetch('http://localhost:3000/pets')
 
     .then(resp => resp.json())
   // .then(console.log)
