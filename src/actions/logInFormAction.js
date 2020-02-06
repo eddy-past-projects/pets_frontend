@@ -21,9 +21,7 @@ export const login = (credentials) => {
     return fetch("https://fast-waters-11750.herokuapp.com/login", {
       credentials: "include",
       method: "POST",
-      // 'Access-Control-Allow-Origin': 'www.other.com',
-        headers: {
-
+      headers: {
           'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
@@ -31,7 +29,6 @@ export const login = (credentials) => {
         body: JSON.stringify(credentials)
       })
       .then(resp => resp.json())
-
       .then(resp => {
 
         if (resp.error) {
