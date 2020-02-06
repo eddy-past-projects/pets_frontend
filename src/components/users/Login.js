@@ -24,7 +24,7 @@ console.log('in login form')
   return (<form onSubmit={handleSubmit}>
     < div className='spacer'>
       <h3><input placeholder="name" value={loginFormData.name} name="name" type="text" onChange={handleInputChange}autoComplete="off" />
-        <input placeholder="password" value={loginFormData.password} name="password" type="text" onChange={handleInputChange}autoComplete="off"/>
+        <input placeholder="password" value={loginFormData.password} name="password" type="password" onChange={handleInputChange}autoComplete="off"/>
         <button type="submit" className="button">Submit</button>
       </h3>
     </div>

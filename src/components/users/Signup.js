@@ -26,7 +26,7 @@ const Signup = ({signupFormData, updateSignupForm, signup, history}) => {
   return (<form onSubmit={handleSubmit} className='form'>
     < div className='spacer'>
         <h3><input placeholder="name" value={signupFormData.name} name="name" type="text" onChange={handleOnChange}autoComplete="off"/>
-          <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={handleOnChange}autoComplete="off"/>
+          <input placeholder="password" value={signupFormData.password} name="password" type="password" onChange={handleOnChange}autoComplete="off"/>
           <button type="submit" className="button">Submit</button>
         </h3>
     </div>
