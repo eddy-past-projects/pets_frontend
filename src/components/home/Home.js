@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getCurrentUser} from '../../actions/currentUserAction'
+import PetContainer from '../../containers/PetContainer'
+
 
 
 
@@ -13,10 +15,6 @@ class Home extends React.Component {
   //   this.props.getMyPets()
   // }
 
-
-
-
-
   render() {
     console.log(this.props, this.state)
     const currentUser = this.props.currentUser
@@ -26,6 +24,7 @@ class Home extends React.Component {
 
 
       hello {currentUser.name}
+      <PetContainer/>
       </div>
     )
 
