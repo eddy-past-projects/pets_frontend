@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, Router, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Login from './components//users/Login'
 import Logout from './components/users/Logout'
 import Signup from './components/users/Signup'
@@ -10,8 +10,6 @@ import ToggleButton from "./components/mobileNavbar/ToggleButton"
 
 import NavBar from './components/navbar/NavBar'
 import Home from './components/home/Home'
-import UserPets from './components/users/UserPets'
-
 
 class App extends React.Component {
   state = {
@@ -33,12 +31,6 @@ class App extends React.Component {
   }
 
 
-    // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token"));
-    //
-
-
-
-
   render() {
     let backdrop;
 
@@ -55,15 +47,11 @@ class App extends React.Component {
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
-
-        
-
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
       <Route path='/logout' component={Logout}/>
 
       <Home />
-
     </div>)
      }
 }

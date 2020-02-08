@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getCurrentUser} from '../../actions/currentUserAction'
 import PetContainer from '../../containers/PetContainer'
+import UserPets from '../users/UserPets'
+
 
 
 
@@ -10,21 +12,32 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.getCurrentUser()
+
   }
-  // componentDidMount(){
-  //   this.props.getMyPets()
-  // }
 
   render() {
-    console.log(this.props, this.state)
+    console.log('props',this.props, 'props',this.props.currentUser.logged_in, this.props.currentUser.user)
     const currentUser = this.props.currentUser
-    console.log(currentUser.name)
+
+    let userLog
+    if(this.props.currentUser.logged_in === true){
+      userLog = `hello ${currentUser.user.name}`
+    }else if(this.props.currentUser.notice === 'no one logged in'){
+      userLog = 'hello'
+    }else if(this.props.currentUser.length === 0){
+      userLog = 'hello'
+    } else {
+      userLog = ` hello ${currentUser.name}`
+
+    }
+
+    // console.log(currentUser.name)
     return(
       <div>
+{userLog}
 
-
-      hello {currentUser.name}
       <PetContainer/>
+
       </div>
     )
 
@@ -38,4 +51,8 @@ const mapStateToProps = state => {
   return {currentUser: state.currentUser}
 }
 
-export default connect(mapStateToProps, {getCurrentUser})(Home);
+export default connect(mapStateToProps, {getCurrentUser})(Home)
+
+// {currentUser ?  <UserPets petsUser={this.props.currentUser}/> :<PetContainer/>}
+// {this.props.currentUser.logged_in ? `hello ${currentUser.user.name}` : null}
+// {!this.props.currentUser.logged_in ? 'hello' : ` hello ${currentUser.name}`}

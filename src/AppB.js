@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, Router, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Login from './components//users/Login'
 import Logout from './components/users/Logout'
 import Signup from './components/users/Signup'
@@ -10,14 +10,14 @@ import ToggleButton from "./components/mobileNavbar/ToggleButton"
 
 import NavBar from './components/navbar/NavBar'
 import Home from './components/home/Home'
-import UserPets from './components/users/UserPets'
-
 
 class App extends React.Component {
   state = {
     mobileNavbarOpen: false,
     toggleButtonOpen: false,
-  };
+    isLoggedIn: false,
+}
+  
 
   toggleButtonClickHandler = () => {
     this.setState((prevState) => {
@@ -31,12 +31,6 @@ class App extends React.Component {
   toggleBackClickHandler = () => {
     this.setState({mobileNavbarOpen: false, toggleButtonOpen: false})
   }
-
-
-    // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token"));
-    //
-
-
 
 
   render() {
@@ -54,9 +48,6 @@ class App extends React.Component {
       <NavBar buttonClickHandler={this.toggleButtonClickHandler}/>
       <MobileNavbar show={this.state.mobileNavbarOpen}/> {backdrop}
         <ToggleButton show={this.state.toggleButtonOpen}/>
-
-
-        
 
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>

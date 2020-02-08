@@ -2,10 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {updateLogInForm} from '../../actions/logInFormAction'
 import {login} from '../../actions/logInFormAction'
+
 import './Users.css'
 
-const Login = ({loginFormData, updateLogInForm, login, history}) => {
-console.log('in login form')
+const Login = ({loginFormData, updateLogInForm, login, loginStatus, history}) => {
+console.log('in login form', 'state')
+
   const handleInputChange = event => {
     const {name, value} = event.target
     const updatedFormInfo = {
@@ -34,5 +36,7 @@ console.log('in login form')
 const mapStateToProps = state => {
   return {loginFormData: state.loginForm}
 }
+
+
 
 export default connect(mapStateToProps, {updateLogInForm, login})(Login)

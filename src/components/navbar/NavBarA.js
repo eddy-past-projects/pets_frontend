@@ -9,9 +9,10 @@ import ToggleButton from '../mobileNavbar/ToggleButton'
 class NavBar extends React.Component {
   constructor(props){
     super()
-
+    this.state = {
+    isLoggedIn: false
+    }
   }
-
 
  render () {
    console.log(this.props)
