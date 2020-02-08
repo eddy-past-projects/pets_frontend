@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, Router, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import Login from './components//users/Login'
 import Logout from './components/users/Logout'
 import Signup from './components/users/Signup'
@@ -32,9 +32,12 @@ class App extends React.Component {
     this.setState({mobileNavbarOpen: false, toggleButtonOpen: false})
   }
 
-
-    // const [loggedIn, setLoggedIn] = useState(localStorage.getItem("token"));
-    //
+//   componentDidMount(){
+// this.setState({userLoggedIn:
+// localStorage.getItem("userLoggedIn")});
+// }
+//     const loggedIn = useState(localStorage.getItem("logged_in"));
+//     //
 
 
 
@@ -56,7 +59,7 @@ class App extends React.Component {
         <ToggleButton show={this.state.toggleButtonOpen}/>
 
 
-        
+
 
       <Route path='/login' component={Login}/>
       <Route path='/signup' component={Signup}/>
