@@ -57,7 +57,7 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/get_current_user", {
+    return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
       credentials: "include",
 
       method: "GET",
