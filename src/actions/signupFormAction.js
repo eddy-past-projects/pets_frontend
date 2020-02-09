@@ -22,9 +22,9 @@ export const signup = (credentials, history) => {
         credentials: "include",
         method: "POST",
         headers: {
-          // 'Access-Control-Allow-Headers':"x-requested-with, x-requested-by",
+          // 'Access-Control-Allow-Headers':"x-requested-with",
 
-
+          'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },

@@ -29,7 +29,7 @@ export const logout = event => {
     dispatch(clearCurrentUser())
     // dispatch(clearMyPets())
 
-    return fetch('https://fast-waters-11750.herokuapp.com/logout', {
+    return fetch('http://localhost:3000/logout', {
       credentials: "include",
       method: "DELETE",
       headers: {
@@ -57,11 +57,12 @@ export const logout = event => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("https://fast-waters-11750.herokuapp.com/get_current_user", {
+    return fetch("http://localhost:3000/get_current_user", {
       credentials: "include",
 
       method: "GET",
         headers: {
+
           'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
