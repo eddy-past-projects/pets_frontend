@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {getCurrentUser} from '../../actions/currentUserAction'
+// import {getCurrentUser} from '../../actions/currentUserAction'
 import PetContainer from '../../containers/PetContainer'
 // import UserPets from '../users/UserPets'
 //
@@ -8,9 +8,10 @@ import PetContainer from '../../containers/PetContainer'
 
 class Home extends React.Component {
 
-  componentDidMount() {
-    this.props.getCurrentUser()
-  }
+
+  // componentDidMount() {
+  //   this.props.getCurrentUser()
+  // }
   // componentDidMount(){
   //   this.props.getMyPets()
   // }
@@ -20,7 +21,7 @@ class Home extends React.Component {
 
 
   render() {
-    console.log('props',this.props, 'props',this.props.currentUser.logged_in, this.props.currentUser.user)
+    console.log('props',this.props, 'props',this.props.currentUser.logged_in, this.props.currentUser.user, this.state)
     const currentUser = this.props.currentUser
 
     let userLog
@@ -55,4 +56,4 @@ const mapStateToProps = state => {
   return {currentUser: state.currentUser}
 }
 
-export default connect(mapStateToProps, {getCurrentUser})(Home);
+export default connect(mapStateToProps)(Home);

@@ -15,14 +15,15 @@ export const resetLogInForm = () => {
 
   }
 }
+
 export const login = (credentials) => {
   console.log(credentials)
   return dispatch => {
     return fetch("https://fast-waters-11750.herokuapp.com/login", {
-      credentials: "include",
+
       method: "POST",
         headers: {
-          'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com',
+          // 'Access-Control-Allow-Origin': 'https://adopt-a-pet.netlify.com',
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -37,7 +38,9 @@ export const login = (credentials) => {
         } else {
           dispatch(setCurrentUser(resp))
           dispatch(resetLogInForm())
-          localStorage.setItem('userLoggedIn', true);
+          // this.props.setCurrentUser(resp)
+
+
           // dispatch(getMyPets())
 
 
@@ -46,3 +49,16 @@ export const login = (credentials) => {
       .catch(console.log)
   }
 }
+
+
+// .then(resp => resp.json())
+//       .then(data => {
+//         if (data.message) {
+//           // Here you should have logic to handle invalid login credentials.
+//           // This assumes your Rails API will return a JSON object with a key of
+//           // 'message' if there is an error
+//         } else {
+//           localStorage.setItem("token", data.jwt)
+//           dispatch(loginUser(data.user))
+//         }
+//       })

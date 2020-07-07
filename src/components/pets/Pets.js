@@ -7,9 +7,9 @@ import './Pets.css'
 
 const Pets = props => {
   const allpets = props.pets.pets
-  console.log('allpets',allpets)
+  // console.log('allpets',allpets)
   const petCards = allpets.length > 0 ? allpets.map(pet => <PetCard img scr={pet.image} pet={pet} key={pet.id}/>) : []
-console.log(petCards)
+// console.log(petCards)
   return (
     petCards
 

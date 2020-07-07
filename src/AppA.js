@@ -18,7 +18,7 @@ class App extends React.Component {
   state = {
     mobileNavbarOpen: false,
     toggleButtonOpen: false,
-    currentUser: false
+    currentUser: null
   }
 
   toggleButtonClickHandler = () => {
@@ -35,9 +35,54 @@ class App extends React.Component {
     this.setState({mobileNavbarOpen: false, toggleButtonOpen: false})
   }
 
-  componentDidMount() {
-    this.props.getCurrentUser()
-  }
+	logOut = () => {
+		localStorage.removeItem("token")
+		this.setState({
+			currentUser: null
+		}, () => {
+			this.props.history.push("/login")
+		})
+	}
+
+	updateUser = (updatedUser) => {
+		this.setState({
+			currentUser: updatedUser
+		})
+	}
+
+	componentDidMount(){
+		const token = localStorage.getItem("token")
+
+		if (token){
+			// load up their shit
+			fetch("http://localhost:3001/api/v1/auto_login", {
+				headers: {
+					"Authorization": token
+				}
+			})
+			.then(res => res.json())
+			.then((response) => {
+				if (response.errors) {
+					alert(response.errors)
+				} else {
+					this.setState({
+						currentUser: response
+					})
+				}
+			})
+		}
+	}
+
+	setCurrentUser = (response) => {
+		this.setState({
+			currentUser: response.user
+		}, () => {
+			localStorage.setItem("token", response.token)
+			this.props.history.push(`/profile`)
+		})
+	}
+
+  
 
   render() {
     console.log(this.props, 'state',this.state)

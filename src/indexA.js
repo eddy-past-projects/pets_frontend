@@ -21,11 +21,34 @@ const rootReducer = combineReducers({
   signupForm: signupFormReducer
 })
 
+function loadFromLocalStorage () {
+  try {
+    const serializedState = localStorage.getItem('state')
+    if(serializedState === null) return undefined
+    console.log(serializedState.currentUser)
+    return JSON.parse(serializedState)
+  } catch(e){
+    console.log(e)
+    return undefined
+  }
+}
 
+function saveToLocalStorage (state)  {
+  try {
+    const serializedState = JSON.stringify(state)
+    console.log(serializedState)
 
+    localStorage.setItem('state', serializedState)
+  } catch(e){
+    console.log(e)
+  }
+}
+
+const persistedState = loadFromLocalStorage()
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)));
+const store = createStore(rootReducer, persistedState, composeEnhancer(applyMiddleware(thunk)));
 
+store.subscribe(() => saveToLocalStorage(store.getState()))
 
 
 

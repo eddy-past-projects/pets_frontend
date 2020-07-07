@@ -28,7 +28,7 @@ export const getPets = () => {
     .then(resp => resp.json())
   // .then(console.log)
   .then(pets => {
-    console.log('pets', pets)
+    // console.log('pets', pets)
     dispatch({ type: 'FETCH_PETS', payload: pets })});
 }
 }

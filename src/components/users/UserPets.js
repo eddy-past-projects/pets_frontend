@@ -10,7 +10,7 @@ import { getCurrentUser } from '../../actions/currentUserAction'
 const UserPets = props => {
   const allpets = props.pets.pets
   const petsUser = props.petsUser.pets
-  console.log('allpets',allpets, 'props',props, 'props.petUser',props.petsUser, props.petsUser.pets)
+  // console.log('allpets',allpets, 'props',props, 'props.petUser',props.petsUser, props.petsUser.pets)
   const userPetCards = petsUser.length > 0 ? petsUser.map(pet => <UserPetCard img scr={pet.image} pet={pet} key={pet.id}/>)
   : []
 
